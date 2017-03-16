@@ -5,7 +5,11 @@ using namespace std;
 
 
 template<class T>
-struct Node // 节点的数据结构
+class LinkList  //链表类
+{
+	
+protected:
+	struct Node // 节点的数据结构
 {
 	T data;
 	Node *next;
@@ -14,24 +18,23 @@ struct Node // 节点的数据结构
 	Node(T t) :data(t), next(nullptr){} // 带参数构造
 };
 
-template<class T>
-class LinkList  //链表类
-{
 private:
-	Node<T> *head; // 头指针 （空节点）
-	Node<T> *tail; // 尾指针 （空节点）
+	Node *head; // 头指针 （空节点）
+	Node *tail; // 尾指针 （空节点）
 	int size;
 public:
 	LinkList()
 	{
-		head = new Node<T>;
-		tail = new Node<T>;
+		head = new Node;
+		tail = new Node;
 
 		size = 0;
 	}
 	~LinkList()
 	{
-
+		clear();
+		delete head;
+		delete tail;
 	}
 public:
        /**

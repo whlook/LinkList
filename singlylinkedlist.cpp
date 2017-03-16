@@ -3,7 +3,7 @@
 template<class T>
 void LinkList<T>::insertOnHead(T val)
 {
-	Node<T> *newNode = new Node<T>;
+	Node *newNode = new Node;
 	newNode->data = val;
 	newNode->next = head->next;
 	head->next = newNode;
@@ -15,7 +15,7 @@ void LinkList<T>::insertOnHead(T val)
 template<class T>
 void LinkList<T>::insertOnTail(T val)
 {
-	Node<T> *newNode = new Node<T>;
+	Node *newNode = new Node;
 	newNode->data = val;
 	newNode->next = nullptr;
 	tail->next->next = newNode;
@@ -28,8 +28,8 @@ bool LinkList<T>::insert(int i,T val)
 	if (i <= 0|| i > size)
 		return false;
 
-	Node<T> *newNode = new Node<T>;
-	Node<T> *temp = head;
+	Node *newNode = new Node;
+	Node *temp = head;
 
 	if (i == size)
 		tail->next = newNode; // 如果在最后插入，更新尾指针
@@ -62,7 +62,7 @@ bool LinkList<T>::getData(int i, T &val)
 {
 	if (i <= size && i > 0)
 	{
-		Node<T> *temp = head;
+		Node *temp = head;
 		for (int j = 0; j < i; ++j)
 		{
 			temp = temp->next;
@@ -83,8 +83,8 @@ bool LinkList<T>::isEmpty()
 template<class T>
 void LinkList<T>::clear()
 {
-	Node<T> *tempFront = head->next;  // 指向下一个待删除
-	Node<T> *tempBack = head->next;   // 指向待删除的元素
+	Node *tempFront = head->next;  // 指向下一个待删除
+	Node *tempBack = head->next;   // 指向待删除的元素
 	for (int i = 0; i < size; ++i)
 	{
 		tempBack = tempFront;
@@ -102,7 +102,7 @@ void LinkList<T>::printList()
 		return;
 	}
 
-	Node<T> * temp = head->next;
+	Node * temp = head->next;
 	for (int i = 0; i < size; ++i)
 	{
 		cout << temp->data << endl;
