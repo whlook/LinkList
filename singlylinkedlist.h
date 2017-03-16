@@ -5,21 +5,21 @@ using namespace std;
 
 
 template<class T>
-struct Node // ½ÚµãµÄÊı¾İ½á¹¹
+struct Node // èŠ‚ç‚¹çš„æ•°æ®ç»“æ„
 {
 	T data;
 	Node *next;
 
-	Node() :next(nullptr){}  // ÎŞ²Î¹¹Ôì
-	Node(T t) :data(t), next(nullptr){} // ´ø²ÎÊı¹¹Ôì
+	Node() :next(nullptr){}  // æ— å‚æ„é€ 
+	Node(T t) :data(t), next(nullptr){} // å¸¦å‚æ•°æ„é€ 
 };
 
 template<class T>
-class LinkList  //Á´±íÀà
+class LinkList  //é“¾è¡¨ç±»
 {
 private:
-	Node<T> *head; // Í·Ö¸Õë £¨¿Õ½Úµã£©
-	Node<T> *tail; // Î²Ö¸Õë £¨¿Õ½Úµã£©
+	Node<T> *head; // å¤´æŒ‡é’ˆ ï¼ˆç©ºèŠ‚ç‚¹ï¼‰
+	Node<T> *tail; // å°¾æŒ‡é’ˆ ï¼ˆç©ºèŠ‚ç‚¹ï¼‰
 	int size;
 public:
 	LinkList()
@@ -34,44 +34,44 @@ public:
 
 	}
 public:
-   /**
-    *	ÔÚÁ´±íµÄÍ·²¿²åÈëĞÂ½Úµã
-    *		@param val£º¸³¸øĞÂ½ÚµãµÄÖµ
+       /**
+        *	åœ¨é“¾è¡¨çš„å¤´éƒ¨æ’å…¥æ–°èŠ‚ç‚¹
+        *		@param valï¼šèµ‹ç»™æ–°èŠ‚ç‚¹çš„å€¼
 	*/
 	void insertOnHead(T val);
 
-   /**
-	*	ÔÚÁ´±íµÄÎ²²¿²åÈëĞÂ½Úµã
-	*		@param val£º¸³¸øĞÂ½ÚµãµÄÖµ
+       /**
+	*	åœ¨é“¾è¡¨çš„å°¾éƒ¨æ’å…¥æ–°èŠ‚ç‚¹
+	*		@param valï¼šèµ‹ç»™æ–°èŠ‚ç‚¹çš„å€¼
 	*/
 	void insertOnTail(T val); 
 
-   /**
-	*	ÔÚÁ´±íµÄÄ³Ò»Î»ÖÃ²åÈëĞÂ½Úµã£¬²åÈë³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse
-	*		@param i£ºÖ¸¶¨µÄÎ»ÖÃ
-	*		@param val£º¸³¸øĞÂ½ÚµãµÄÖµ
+       /**
+	*	åœ¨é“¾è¡¨çš„æŸä¸€ä½ç½®æ’å…¥æ–°èŠ‚ç‚¹ï¼Œæ’å…¥æˆåŠŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	*		@param iï¼šæŒ‡å®šçš„ä½ç½®
+	*		@param valï¼šèµ‹ç»™æ–°èŠ‚ç‚¹çš„å€¼
 	*/
 	bool insert(int i,T val); 
 
-   /**
-	*	»ñÈ¡Ä³½ÚµãµÄÖµ£¬»ñÈ¡³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse
-	*		@param i£ºÖ¸¶¨µÄÎ»ÖÃ
-	*		@param val£º¸³¸øĞÂ½ÚµãµÄÖµ	
+       /**
+	*	è·å–æŸèŠ‚ç‚¹çš„å€¼ï¼Œè·å–æˆåŠŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	*		@param iï¼šæŒ‡å®šçš„ä½ç½®
+	*		@param valï¼šèµ‹ç»™æ–°èŠ‚ç‚¹çš„å€¼	
 	*/
 	bool getData(int i,T &val); 
 
-   /**
-	*	ÅĞ¶Ï¿Õ£¬¿ÕµÄ»°·µ»Øtrue£¬·ñÔò·µ»Øfalse
+       /**
+	*	åˆ¤æ–­ç©ºï¼Œç©ºçš„è¯è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	*/
 	bool isEmpty(); 
 
-   /**
-	*	Çå¿ÕÁ´±í
+       /**
+	*	æ¸…ç©ºé“¾è¡¨
 	*/
 	void clear(); 
 
-   /**
-	*	´òÓ¡Á´±í
+       /**
+	*	æ‰“å°é“¾è¡¨
 	*/
 	void printList();
 };
